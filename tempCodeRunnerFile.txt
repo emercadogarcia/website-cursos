@@ -1,0 +1,1 @@
+sail php artisan make:model Category -mf

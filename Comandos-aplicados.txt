@@ -1,0 +1,51 @@
+***** Antes de empezar:
+     curl -s "https://laravel.build/backend-pgsql?with=pgsql" | bash
+     cd [directorio]
+     alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+     sail up
+dir====  /mnt/c/users/edgar.mercado/devBackEnd/laravel/prgprueba/j-livewire-8
+
+# crar las migraciones
+sail php artisan make:model Category -mf
+sail php artisan make:model Course -mf
+sail php artisan make:model Post -mf
+
+# si ocurre algun error al instalar debe ejecutar:
+sail composer install
+
+
+002 - modificacion de archivos
+
+003 - ejecutamos migracion
+sail php artisan migrate   luego revisamos y luego con los datos semilla
+sail php artisan migrate:fresh --seed
+
+
+004 - en caso de que no mues el app_key ejecutar el siguiente comando:
+sail php artisan key:generate
+
+005 - para agregar la autentificacion de jetstream
+sail composer require laravel/jetstream
+sail php artisan jetstream:install livewire
+    # si actualizo y no muestra la pagina debe faltar con algunas migraciones que se añadieron
+    sail php artisan migrate
+npm install && npm run dev
+
+006 - crear plantilla y vistas
+elimino WELCOME.BLADE.PHP
+
+007 - se configura index en routes.
+008 - configurando Index y plantilla
+009 - usando livewire
+    sail php artisan make:livewire CourseList
+    Creamos el componente y le agregamos codigo php para llenar de datos.
+    agregamos un div para agregar las etiquetas y hacer 3 columnas.
+    creamos los campos virtuales excerpt, avatar y otro.
+
+    Para no estar ejecutando npm run dev para actualizar los cambios de tailwind se puede usar:
+    npm run watch
+010 - creamos un controller nuevo con el nombre de PageController
+    sail php artisan make:controller PageController
+
+011 - creamos la tarjeta elemento que contengdra el curso.
+    sail php artisan make:component course-card
