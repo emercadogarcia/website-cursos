@@ -49,3 +49,5 @@ elimino WELCOME.BLADE.PHP
 
 011 - creamos la tarjeta elemento que contengdra el curso.
     sail php artisan make:component course-card
+    *** copiamos lo que esta dentro de foreach de course-list todo la parte de diseño
+    
